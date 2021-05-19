@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "8ae1df39-df8b-45b9-893e-bdcfcc6a29ba",
+		"name": "Demo.GetRequestWithBody",
+		"description": "Demonstrates passing a body payload to a GET endpoint.\n\nSee this [GitHub repo](https://github.com/JeevanJames/Demo.GetRequestWithBody) for more details.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET endpoint",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"color\": \"white\",\r\n    \"pagination\": {\r\n        \"page\": 0,\r\n        \"pageSize\": 10\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:5001/products/_query",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"_query"
+					]
+				},
+				"description": "Uses GET to query the products. The query is passed as a body payload."
+			},
+			"response": []
+		},
+		{
+			"name": "POST endpoint",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"color\": \"white\",\r\n    \"pagination\": {\r\n        \"page\": 0,\r\n        \"pageSize\": 10\r\n    }\r\n}"
+				},
+				"url": null,
+				"description": "Uses POST to query the products. The query is passed as a body payload."
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null,
+				"description": "Gets all products, so you can see what is available to construct a query."
+			},
+			"response": []
+		}
+	]
+}
